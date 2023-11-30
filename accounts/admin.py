@@ -5,3 +5,4 @@ from .forms import CustomUserCreationForm, CustomUserChangeForm
 
 class CustomUserAdmin(UserAdmin):
     add_form = CustomUserCreationForm
+    form = CustomUserChangeForm
