@@ -4,4 +4,4 @@ from .forms import CustomUserCreationForm, CustomUserChangeForm
 
 
 class CustomUserAdmin(UserAdmin):
-    pass
+    add_form = CustomUserCreationForm
