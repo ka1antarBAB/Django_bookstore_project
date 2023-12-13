@@ -5,12 +5,19 @@
 {% endblock title %}
 
 {% block content %}
-        <p>{{ books.title }}</p>
-        <hr>
-        <p>{{ books.description }}</p>
-        <hr>
-        <p>{{ books.author }}</p>
-        <hr>
-        <p>{{ books.price }}<p>
+    <h1>{{ books.title }}</h1>
+    <h5>{{ books.description }}</h5>
+    <p>{{ books.author }}</p>
+    <p>{{ books.price }}
+    <p>
+        <br>
+        <a href="{% url 'book_list' %}">
+            <button class="btn btn-success mt-3" Type="submit">book list</button>
+        </a>
+        <br>
+        <a href="{% url 'home' %}">
+            <button class="btn btn-success mt-3" Type="submit">Home page</button>
+        </a>
 
-{% endblock content%}
+
+{% endblock content %}

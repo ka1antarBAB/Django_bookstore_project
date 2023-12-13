@@ -5,14 +5,14 @@
 {% endblock title %}
 
 {% block content %}
-    {% for book in  books%}
-        <p>{{ book.title }}</p>
+    {% for books in books %}
+        <a href="{{ books.get_absolute_url }}"><h1>{{ books.title }}</h1></a>
+        <p>{{ books.description }}</p>
+        <p>{{ books.author }}</p>
+        <p>{{ books.price }}<p>
         <hr>
-        <p>{{ book.description }}</p>
-        <hr>
-        <p>{{ book.author }}</p>
-        <hr>
-        <p>{{ book.price }}<p>
     {% endfor %}
-
-{% endblock content%}
+    <a href="{% url 'home' %}">
+        <button class="btn btn-success mt-3" Type="submit">Home page</button>
+    </a>
+{% endblock content %}
