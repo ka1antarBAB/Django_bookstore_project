@@ -6,10 +6,9 @@
 
 {% block content %}
     <h1>{{ books.title }}</h1>
-    <h5>{{ books.description }}</h5>
+    <h5>{{ books.description|linebreaks }}</h5>
     <p>{{ books.author }}</p>
-    <p>{{ books.price }}
-    <p>
+    <p>{{ books.price }}$<p>
         <br>
         <a href="{% url 'book_list' %}">
             <button class="btn btn-success mt-3" Type="submit">book list</button>

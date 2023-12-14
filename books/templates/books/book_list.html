@@ -6,10 +6,10 @@
 
 {% block content %}
     {% for books in books %}
-        <a href="{{ books.get_absolute_url }}"><h1>{{ books.title }}</h1></a>
-        <p>{{ books.description }}</p>
-        <p>{{ books.author }}</p>
-        <p>{{ books.price }}<p>
+        <a href="{{ books.get_absolute_url }}"><h1>{{ books.title|title }}</h1></a>
+        <p>{{ books.description|truncatewords:20 }}</p>
+        <p>{{ books.author|title }}</p>
+        <p>{{ books.price }} $<p>
         <hr>
     {% endfor %}
     <a href="{% url 'home' %}">
