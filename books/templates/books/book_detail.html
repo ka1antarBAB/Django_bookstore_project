@@ -1,12 +1,12 @@
 {% extends '_Base.html' %}
-
+{% load book_tags %}
 {% block title %}
     book detail : {{ books.title }}
 {% endblock title %}
 
 {% block content %}
     <h1>{{ books.title }}</h1>
-    <h5>{{ books.description|linebreaks }}</h5>
+    <h5>{{ books.description|to_title:"description"|linebreaks }}</h5>
     <p>{{ books.author }}</p>
     <p>{{ books.price }}$<p>
         <br>
