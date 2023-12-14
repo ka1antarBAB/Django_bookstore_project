@@ -1,0 +1,23 @@
+{% extends '_Base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} edite book : {{ books.title }}{% endblock title %}
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button class="btn btn-success mt-3" Type="submit">edite</button>
+    </form>
+    <br>
+    <div>
+        <a href="{% url 'book_list' %}">
+            <button class="btn btn-success mt-3" Type="submit">book list</button>
+        </a>
+        <br>
+        <a href="{% url 'home' %}">
+            <button class="btn btn-success mt-3" Type="submit">Home page</button>
+        </a>
+        <a href="{% url 'book_delete' books.id%}">
+            <button class="btn btn-success mt-3" Type="submit">Delete</button>
+        </a
+    </div>
+{% endblock content %}

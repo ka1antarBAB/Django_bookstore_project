@@ -18,6 +18,8 @@
         <a href="{% url 'home' %}">
             <button class="btn btn-success mt-3" Type="submit">Home page</button>
         </a>
-
-
+        <hr>
+        <a href="{% url 'book_update' books.id %}">
+            <button class="btn btn-success mt-3" Type="submit">edite book </button>
+        </a>
 {% endblock content %}
