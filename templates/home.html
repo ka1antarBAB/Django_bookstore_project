@@ -5,13 +5,4 @@
 {% endblock title %}
 {% block content %}
     <h1>home page</h1>
-    {% if user.is_authenticated %}
-        <p>wellcome {{ user.username }}</p> | <a href="{% url 'logout' %}">logout</a>
-    {% else %}
-        <a href="{% url 'login' %}">login</a> | <a href="{% url 'signup' %}">signup</a>
-    {% endif %}
-    <br>
-    <a href="{% url 'book_list' %}">
-        <button class="btn btn-success mt-3" Type="submit">book list</button>
-    </a>
 {% endblock content %}
