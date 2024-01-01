@@ -14,8 +14,8 @@
                             {% if book.cover %}
                                 <img src="{{ book.cover.url }}"
                                      class="img-fluid rounded-start" alt="...">
-                                {% else %}
-                                    <img src="https://www.bing.com/ck/a?!&&p=9cf7913948c54301JmltdHM9MTcwMjk0NDAwMCZpZ3VpZD0zMGFjNjBlOS01MWZiLTYwZTAtMGRlYS03MzU2NTAyMDYxMDMmaW5zaWQ9NTUyMA&ptn=3&ver=2&hsh=3&fclid=30ac60e9-51fb-60e0-0dea-735650206103&u=a1L2ltYWdlcy9zZWFyY2g_cT1lbXB0eiBwaWN0dXJlIGZvciBhbm9uZSBib29rcyBjb3ZlciZGT1JNPUlRRlJCQSZpZD1BOERCOTA1QzA3RDY2Rjk2Q0YzRTYyRTcwN0Y0MUIyRTYzRDI2RjQ5&ntb=1"
+                            {% else %}
+                                <img src="https://www.bing.com/ck/a?!&&p=9cf7913948c54301JmltdHM9MTcwMjk0NDAwMCZpZ3VpZD0zMGFjNjBlOS01MWZiLTYwZTAtMGRlYS03MzU2NTAyMDYxMDMmaW5zaWQ9NTUyMA&ptn=3&ver=2&hsh=3&fclid=30ac60e9-51fb-60e0-0dea-735650206103&u=a1L2ltYWdlcy9zZWFyY2g_cT1lbXB0eiBwaWN0dXJlIGZvciBhbm9uZSBib29rcyBjb3ZlciZGT1JNPUlRRlJCQSZpZD1BOERCOTA1QzA3RDY2Rjk2Q0YzRTYyRTcwN0Y0MUIyRTYzRDI2RjQ5&ntb=1"
                                      class="img-fluid rounded-start" alt="...">
                             {% endif %}
                         </div>
@@ -35,7 +35,17 @@
             {% endfor %}
         </div>
     </div>
-
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center mt-4">
+            {% if page_obj.has_previous %}
+                <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+            {% endif %}
+            <li class="page-item"><a class="page-link" href="">{{ page_obj.number }}</a></li>
+            {% if page_obj.has_next %}
+                <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+            {% endif %}
+        </ul>
+    </nav>
     <footer class="bg-light text-center text-lg-start mt-5">
         <div class="text-center bg-grey">
             <p>دوره آموزشی جنگو <a class="text-dark" href="https://codingyar.com/" target="_blank">کدینگ یار</a></p>
