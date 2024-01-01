@@ -27,5 +27,3 @@ class Comment(models.Model):
     def __str__(self):
         return f"Comment by {self.user} : {self.text}"
 
-    def get_absolute_url(self):
-        return reverse("book_detail", args=[str(self.id)])
