@@ -1,5 +1,7 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth import get_user_model
 
 
 class Book(models.Model):
@@ -15,3 +17,15 @@ class Book(models.Model):
     def get_absolute_url(self):
         return reverse("book_detail", args=[str(self.id)])
 
+
+class Comment(models.Model):
+    text = models.TextField()
+    datetime_created = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"Comment by {self.user} : {self.text}"
+
+    def get_absolute_url(self):
+        return reverse("book_detail", args=[str(self.id)])
